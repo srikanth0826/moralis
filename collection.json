@@ -255,7 +255,7 @@
 					"apikey": [
 						{
 							"key": "value",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjZiYjQ3OTQyLTFkYjgtNGNhZC04MWZlLTA4ZjdlZGM1NzJmMiIsIm9yZ0lkIjoiNDg0MDkzIiwidXNlcklkIjoiNDk4MDQyIiwidHlwZUlkIjoiMTI1NjU2ZGUtODhjOS00ZDU4LWE5MTQtMTgwN2RkY2VlYjFhIiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3NjQ2MzA5MzQsImV4cCI6NDkyMDM5MDkzNH0.poHUBb0VWxKcSXNCyKJvLTl0lliL-iDXAEsjxJqQJw4",
+							"value": "{{api_key}}",
 							"type": "string"
 						},
 						{
