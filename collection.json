@@ -279,7 +279,7 @@
 						"api",
 						"v2.2",
 						"wallets",
-						"{{wallet_address}}",
+						"0xcB1C1FdE09f811B294172696404e88E658659905",
 						"history"
 					],
 					"query": [
@@ -380,7 +380,7 @@
 						"api",
 						"v2.2",
 						"wallets",
-						"{{wallet_address}}",
+						"0xcB1C1FdE09f811B294172696404e88E658659905",
 						"history"
 					],
 					"query": [
