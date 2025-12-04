@@ -16,6 +16,6 @@ jobs:
       - name: Run Postman collection with API key
         run: |
           newman run collection.json \
-            --env-var api_key=${{ secrets.APIKEY }} \
+            --env-var api_key=${{ secrets.apikey }} \
             -r cli,html \
             --reporter-html-export newman-report.html
