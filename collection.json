@@ -1,0 +1,582 @@
+{
+	"info": {
+		"_postman_id": "d89f1648-4019-4b7a-aa7a-ab4f098c5186",
+		"name": "Moralis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47646812",
+		"_collection_link": "https://srikanth26-work-5314220.postman.co/workspace/Srikanth-Sathinathan's-Workspac~8d421474-629f-4551-8547-a208721a2aee/collection/47646812-d89f1648-4019-4b7a-aa7a-ab4f098c5186?action=share&source=collection_link&creator=47646812"
+	},
+	"item": [
+		{
+			"name": "wallets/{address}/history",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var schema = {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"page_size\": {\r",
+							"      \"type\": \"integer\"\r",
+							"    },\r",
+							"    \"page\": {\r",
+							"      \"type\": \"integer\"\r",
+							"    },\r",
+							"    \"limit\": {\r",
+							"      \"type\": \"integer\"\r",
+							"    },\r",
+							"    \"result\": {\r",
+							"      \"type\": \"array\",\r",
+							"      \"items\": [\r",
+							"        {\r",
+							"          \"type\": \"object\",\r",
+							"          \"properties\": {\r",
+							"            \"hash\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"nonce\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"transaction_index\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"from_address_entity\": {\r",
+							"              \"type\": \"null\"\r",
+							"            },\r",
+							"            \"from_address_entity_logo\": {\r",
+							"              \"type\": \"null\"\r",
+							"            },\r",
+							"            \"from_address\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"from_address_label\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"to_address_entity\": {\r",
+							"              \"type\": \"null\"\r",
+							"            },\r",
+							"            \"to_address_entity_logo\": {\r",
+							"              \"type\": \"null\"\r",
+							"            },\r",
+							"            \"to_address\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"to_address_label\": {\r",
+							"              \"type\": \"null\"\r",
+							"            },\r",
+							"            \"value\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"gas\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"gas_price\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"receipt_cumulative_gas_used\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"receipt_gas_used\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"receipt_contract_address\": {\r",
+							"              \"type\": \"null\"\r",
+							"            },\r",
+							"            \"receipt_status\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"block_timestamp\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"block_number\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"block_hash\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"transaction_fee\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"method_label\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"nft_transfers\": {\r",
+							"              \"type\": \"array\",\r",
+							"              \"items\": {}\r",
+							"            },\r",
+							"            \"erc20_transfers\": {\r",
+							"              \"type\": \"array\",\r",
+							"              \"items\": {}\r",
+							"            },\r",
+							"            \"native_transfers\": {\r",
+							"              \"type\": \"array\",\r",
+							"              \"items\": [\r",
+							"                {\r",
+							"                  \"type\": \"object\",\r",
+							"                  \"properties\": {\r",
+							"                    \"from_address_entity\": {\r",
+							"                      \"type\": \"null\"\r",
+							"                    },\r",
+							"                    \"from_address_entity_logo\": {\r",
+							"                      \"type\": \"null\"\r",
+							"                    },\r",
+							"                    \"from_address\": {\r",
+							"                      \"type\": \"string\"\r",
+							"                    },\r",
+							"                    \"from_address_label\": {\r",
+							"                      \"type\": \"string\"\r",
+							"                    },\r",
+							"                    \"to_address_entity\": {\r",
+							"                      \"type\": \"null\"\r",
+							"                    },\r",
+							"                    \"to_address_entity_logo\": {\r",
+							"                      \"type\": \"null\"\r",
+							"                    },\r",
+							"                    \"to_address\": {\r",
+							"                      \"type\": \"string\"\r",
+							"                    },\r",
+							"                    \"to_address_label\": {\r",
+							"                      \"type\": \"null\"\r",
+							"                    },\r",
+							"                    \"value\": {\r",
+							"                      \"type\": \"string\"\r",
+							"                    },\r",
+							"                    \"value_formatted\": {\r",
+							"                      \"type\": \"string\"\r",
+							"                    },\r",
+							"                    \"direction\": {\r",
+							"                      \"type\": \"string\"\r",
+							"                    },\r",
+							"                    \"internal_transaction\": {\r",
+							"                      \"type\": \"boolean\"\r",
+							"                    },\r",
+							"                    \"token_symbol\": {\r",
+							"                      \"type\": \"string\"\r",
+							"                    },\r",
+							"                    \"token_logo\": {\r",
+							"                      \"type\": \"string\"\r",
+							"                    }\r",
+							"                  },\r",
+							"                  \"required\": [\r",
+							"                    \"from_address_entity\",\r",
+							"                    \"from_address_entity_logo\",\r",
+							"                    \"from_address\",\r",
+							"                    \"from_address_label\",\r",
+							"                    \"to_address_entity\",\r",
+							"                    \"to_address_entity_logo\",\r",
+							"                    \"to_address\",\r",
+							"                    \"to_address_label\",\r",
+							"                    \"value\",\r",
+							"                    \"value_formatted\",\r",
+							"                    \"direction\",\r",
+							"                    \"internal_transaction\",\r",
+							"                    \"token_symbol\",\r",
+							"                    \"token_logo\"\r",
+							"                  ]\r",
+							"                }\r",
+							"              ]\r",
+							"            },\r",
+							"            \"summary\": {\r",
+							"              \"type\": \"string\"\r",
+							"            },\r",
+							"            \"possible_spam\": {\r",
+							"              \"type\": \"boolean\"\r",
+							"            },\r",
+							"            \"category\": {\r",
+							"              \"type\": \"string\"\r",
+							"            }\r",
+							"          },\r",
+							"          \"required\": [\r",
+							"            \"hash\",\r",
+							"            \"nonce\",\r",
+							"            \"transaction_index\",\r",
+							"            \"from_address_entity\",\r",
+							"            \"from_address_entity_logo\",\r",
+							"            \"from_address\",\r",
+							"            \"from_address_label\",\r",
+							"            \"to_address_entity\",\r",
+							"            \"to_address_entity_logo\",\r",
+							"            \"to_address\",\r",
+							"            \"to_address_label\",\r",
+							"            \"value\",\r",
+							"            \"gas\",\r",
+							"            \"gas_price\",\r",
+							"            \"receipt_cumulative_gas_used\",\r",
+							"            \"receipt_gas_used\",\r",
+							"            \"receipt_contract_address\",\r",
+							"            \"receipt_status\",\r",
+							"            \"block_timestamp\",\r",
+							"            \"block_number\",\r",
+							"            \"block_hash\",\r",
+							"            \"transaction_fee\",\r",
+							"            \"method_label\",\r",
+							"            \"nft_transfers\",\r",
+							"            \"erc20_transfers\",\r",
+							"            \"native_transfers\",\r",
+							"            \"summary\",\r",
+							"            \"possible_spam\",\r",
+							"            \"category\"\r",
+							"          ]\r",
+							"        }\r",
+							"      ]\r",
+							"    },\r",
+							"    \"cursor\": {\r",
+							"      \"type\": \"string\"\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\r",
+							"    \"page_size\",\r",
+							"    \"page\",\r",
+							"    \"limit\",\r",
+							"    \"result\",\r",
+							"    \"cursor\"\r",
+							"  ]\r",
+							"};\r",
+							"\r",
+							"pm.test('Schema is valid', function () {\r",
+							"    pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjZiYjQ3OTQyLTFkYjgtNGNhZC04MWZlLTA4ZjdlZGM1NzJmMiIsIm9yZ0lkIjoiNDg0MDkzIiwidXNlcklkIjoiNDk4MDQyIiwidHlwZUlkIjoiMTI1NjU2ZGUtODhjOS00ZDU4LWE5MTQtMTgwN2RkY2VlYjFhIiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3NjQ2MzA5MzQsImV4cCI6NDkyMDM5MDkzNH0.poHUBb0VWxKcSXNCyKJvLTl0lliL-iDXAEsjxJqQJw4",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://deep-index.moralis.io/api/v2.2/wallets/{{wallet_address}}/history?chain=eth&order=DESC&limit=1",
+					"protocol": "https",
+					"host": [
+						"deep-index",
+						"moralis",
+						"io"
+					],
+					"path": [
+						"api",
+						"v2.2",
+						"wallets",
+						"{{wallet_address}}",
+						"history"
+					],
+					"query": [
+						{
+							"key": "chain",
+							"value": "eth"
+						},
+						{
+							"key": "order",
+							"value": "DESC",
+							"description": "ASC"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "page_size",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "from_block",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "from_date",
+							"value": "2026-09-08",
+							"disabled": true
+						},
+						{
+							"key": "nft_metadata",
+							"value": "false",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invalid-API-KEY",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response JSON matches expected values\", function () {\r",
+							"    pm.expect(pm.response.json()).to.eql({\r",
+							"        message: \"Token is invalid format\"\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "invalidapikey",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://deep-index.moralis.io/api/v2.2/wallets/{{wallet_address}}/history?chain=eth&order=DESC&limit=1",
+					"protocol": "https",
+					"host": [
+						"deep-index",
+						"moralis",
+						"io"
+					],
+					"path": [
+						"api",
+						"v2.2",
+						"wallets",
+						"{{wallet_address}}",
+						"history"
+					],
+					"query": [
+						{
+							"key": "chain",
+							"value": "eth"
+						},
+						{
+							"key": "order",
+							"value": "DESC",
+							"description": "ASC"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "page_size",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "from_block",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "from_date",
+							"value": "2026-09-08",
+							"disabled": true
+						},
+						{
+							"key": "nft_metadata",
+							"value": "false",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invalid-query-parameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response JSON matches expected values\", function () {\r",
+							"    pm.expect(pm.response.json()).to.eql({\r",
+							"        message: \"chain must be a valid enum value\"\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjZiYjQ3OTQyLTFkYjgtNGNhZC04MWZlLTA4ZjdlZGM1NzJmMiIsIm9yZ0lkIjoiNDg0MDkzIiwidXNlcklkIjoiNDk4MDQyIiwidHlwZUlkIjoiMTI1NjU2ZGUtODhjOS00ZDU4LWE5MTQtMTgwN2RkY2VlYjFhIiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3NjQ2MzA5MzQsImV4cCI6NDkyMDM5MDkzNH0.poHUBb0VWxKcSXNCyKJvLTl0lliL-iDXAEsjxJqQJw4",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://deep-index.moralis.io/api/v2.2/wallets/{{wallet_address}}/history?chain=eth1&order=DESC&limit=1",
+					"protocol": "https",
+					"host": [
+						"deep-index",
+						"moralis",
+						"io"
+					],
+					"path": [
+						"api",
+						"v2.2",
+						"wallets",
+						"{{wallet_address}}",
+						"history"
+					],
+					"query": [
+						{
+							"key": "chain",
+							"value": "eth1"
+						},
+						{
+							"key": "order",
+							"value": "DESC",
+							"description": "ASC"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "page_size",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "from_block",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "from_date",
+							"value": "2026-09-08",
+							"disabled": true
+						},
+						{
+							"key": "nft_metadata",
+							"value": "false",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "wallet_address",
+			"value": ""
+		},
+		{
+			"key": "add",
+			"value": ""
+		},
+		{
+			"key": "add1",
+			"value": ""
+		},
+		{
+			"key": "add2",
+			"value": ""
+		},
+		{
+			"key": "add3",
+			"value": ""
+		},
+		{
+			"key": "apikey",
+			"value": ""
+		}
+	]
+}
