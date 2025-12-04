@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "wallets/{address}/history",
+			"name": "wallets/{address1}/history",
 			"event": [
 				{
 					"listen": "test",
