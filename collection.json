@@ -268,7 +268,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://deep-index.moralis.io/api/v2.2/wallets/{{wallet_address}}/history?chain=eth&order=DESC&limit=1",
+					"raw": "https://deep-index.moralis.io/api/v2.2/wallets/0xcB1C1FdE09f811B294172696404e88E658659905/history?chain=eth&order=DESC&limit=1",
 					"protocol": "https",
 					"host": [
 						"deep-index",
@@ -369,7 +369,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://deep-index.moralis.io/api/v2.2/wallets/{{wallet_address}}/history?chain=eth&order=DESC&limit=1",
+					"raw": "https://deep-index.moralis.io/api/v2.2/wallets/0xcB1C1FdE09f811B294172696404e88E658659905/history?chain=eth&order=DESC&limit=1",
 					"protocol": "https",
 					"host": [
 						"deep-index",
